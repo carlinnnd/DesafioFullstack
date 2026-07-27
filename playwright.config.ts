@@ -1,4 +1,13 @@
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+
 import { defineConfig, devices } from "@playwright/test";
+
+const databasePath = join(mkdtempSync(join(tmpdir(), "lotes-e2e-")), "lotes.db").replaceAll(
+  "\\",
+  "/",
+);
 
 export default defineConfig({
   testDir: "./e2e",
@@ -16,7 +25,7 @@ export default defineConfig({
       url: "http://127.0.0.1:8010/docs",
       reuseExistingServer: false,
       env: {
-        DATABASE_URL: "sqlite://",
+        DATABASE_URL: `sqlite:///${databasePath}`,
         CORS_ORIGINS: "http://127.0.0.1:5174",
       },
     },
