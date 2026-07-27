@@ -138,7 +138,7 @@ Antes da publicação, `npm ci`, `uv sync --locked` e o CI reproduzem a mesma in
 
 ## Se houvesse mais tempo e ferramentas
 
-- Utilizaria um servidor como banco de dados hospedado em nuvem, com serviços como AWS
+- Sistema de fila para multiplos requests
 - Prepararia melhor o sistema para ações de múltiplos usuários ao mesmo tempo evitando diversas race conditions.
 - Deixaria o sistema de front end mais reativo e customizado, também implementando um sistema de usuário (registro/login/dados próprios).
 - Sistema de pagamento integrado para realizar o pagamento do lote.
