@@ -121,7 +121,7 @@ Entradas inválidas retornam `422`, número repetido retorna `409` e lote inexis
 | Estática | Ruff, ESLint, TypeScript e build Vite. |
 | Contêineres | Docker Compose com Nginx servindo a interface e proxy reverso para a API. |
 
-O workflow em `.github/workflows/ci.yml` repete essas verificações em cada push e pull request e guarda os relatórios E2E como artefatos por sete dias.
+O workflow em `.github/workflows/ci.yml` repete essas verificações em cada push e pull request.
 
 ## O que significa testar em um “clone limpo”?
 
