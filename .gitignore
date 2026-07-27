@@ -31,7 +31,7 @@ backend/data/
 # Testes e ferramentas locais
 .playwright-cli/
 .figma-capture-*/
-output/playwright/report/
+output/
 playwright-report/
 blob-report/
 test-results/

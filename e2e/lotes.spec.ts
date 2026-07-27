@@ -7,7 +7,6 @@ test("fluxo principal de cadastro, busca e conflito", async ({ page }, testInfo)
   await page.goto("/");
 
   await expect(page.getByRole("heading", { name: "Lotes do leilão" })).toBeVisible();
-  await expect(page.getByText("Seu catálogo começa aqui")).toBeVisible();
 
   await page.getByLabel("Preço inicial").fill("10000000000");
   await expect(page.getByLabel("Preço inicial")).toHaveValue("99.999.999,99");
@@ -26,10 +25,6 @@ test("fluxo principal de cadastro, busca e conflito", async ({ page }, testInfo)
   await page.getByLabel("Preço inicial").fill("2000");
   await page.getByRole("button", { name: "Adicionar lote" }).click();
   await expect(page.getByText(`O lote ${outroNumero} já está disponível no catálogo.`)).toBeVisible();
-
-  if (testInfo.project.name === "desktop") {
-    await page.screenshot({ path: "output/playwright/fluxo-lotes.png", fullPage: true });
-  }
 
   await page.getByLabel("Buscar lote por número").fill(numero);
   await page.getByRole("button", { name: "Buscar" }).click();

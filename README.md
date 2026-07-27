@@ -2,8 +2,6 @@
 
 Uma aplicação full stack para cadastrar, localizar e consultar lotes de leilão. Além do contrato mínimo do desafio, a entrega inclui busca, paginação, ordenação, validação em duas camadas, estados resilientes de interface, acessibilidade e automação de qualidade.
 
-![Tela principal da aplicação](output/playwright/fluxo-lotes.png)
-
 ## Diferenciais da entrega
 
 - Identidade visual responsiva, com experiência adaptada para desktop e celular;
