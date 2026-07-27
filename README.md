@@ -136,9 +136,9 @@ npm run verify
 
 Antes da publicação, `npm ci`, `uv sync --locked` e o CI reproduzem a mesma instalação determinística.
 
-## Limitações conscientes
+## Se houvesse mais tempo e ferramentas
 
-- O escopo não inclui edição, exclusão, autenticação ou autorização.
-- A criação automática da tabela substitui migrations nesta versão curta.
-- SQLite atende bem ao desafio; PostgreSQL seria a evolução natural para produção e maior concorrência.
-- O deploy foi deliberadamente deixado fora da entrega.
+- Utilizaria um servidor como banco de dados hospedado em nuvem, com serviços como AWS
+- Prepararia melhor o sistema para ações de múltiplos usuários ao mesmo tempo evitando diversas race conditions.
+- Deixaria o sistema de front end mais reativo e customizado, também implementando um sistema de usuário (registro/login/dados próprios).
+- Sistema de pagamento integrado para realizar o pagamento do lote.
