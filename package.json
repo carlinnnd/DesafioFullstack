@@ -1,0 +1,24 @@
+{
+  "name": "lotes-leilao",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "npm ci && npm --prefix frontend ci && uv --directory backend sync --locked",
+    "dev": "concurrently -k -n API,WEB -c blue,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "cd backend && uv run uvicorn app.main:app --reload --port 8000",
+    "dev:web": "npm --prefix frontend run dev",
+    "test": "npm run test:api && npm run test:web",
+    "test:api": "cd backend && uv run pytest",
+    "test:web": "npm --prefix frontend run test -- --run",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e",
+    "lint": "uv --directory backend run ruff check . && npm --prefix frontend run lint",
+    "build": "npm --prefix frontend run build",
+    "verify": "npm run lint && npm test && npm run build && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
+    "concurrently": "^9.2.1"
+  }
+}
